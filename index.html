@@ -37,7 +37,11 @@ main{max-width:1000px;margin:0 auto;padding:0 24px}
 .overview-card td{padding:8px 0;font-size:0.9rem;border-bottom:1px solid #f0f0f0;vertical-align:top}
 .overview-card td:first-child{color:#888;width:35%;white-space:nowrap;padding-right:16px}
 .vision-text{font-size:1.05rem;color:#1a1a2e;font-weight:500;margin-bottom:12px}
-.vision-sub{font-size:0.88rem;color:#666}
+.vision-sub{font-size:0.88rem;color:#666;margin-bottom:16px}
+.clients-title{font-size:0.75rem;color:#888;letter-spacing:0.05em;margin-bottom:8px;font-weight:600}
+.clients-list{font-size:0.82rem;color:#555;list-style:none;padding:0}
+.clients-list li{padding:3px 0;border-bottom:1px solid #f5f5f5}
+.clients-list li:last-child{border-bottom:none}
 
 /* ===== TIMELINE ===== */
 .timeline-section{padding:60px 0}
@@ -55,13 +59,15 @@ main{max-width:1000px;margin:0 auto;padding:0 24px}
 .timeline-content:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateX(4px)}
 .timeline-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:4px}
 .timeline-desc{font-size:0.88rem;color:#666}
-.timeline-tag{display:inline-block;font-size:0.7rem;padding:2px 8px;border-radius:10px;margin-top:8px;font-weight:600}
+.timeline-tag{display:inline-block;font-size:0.7rem;padding:2px 8px;border-radius:10px;margin-top:8px;font-weight:600;margin-right:4px}
 .tag-founding{background:#fff3e0;color:#e65100}
 .tag-expansion{background:#e3f2fd;color:#1565c0}
 .tag-product{background:#e8f5e9;color:#2e7d32}
-.tag-award{background:#fce4ec;color:#c62828}
+.tag-education{background:#e0f7fa;color:#00695c}
+.tag-nft{background:#ede7f6;color:#4527a0}
+.tag-event{background:#fce4ec;color:#c62828}
 .tag-global{background:#f3e5f5;color:#6a1b9a}
-.tag-milestone{background:#fff8e1;color:#f57f17}
+.tag-crafts{background:#fff8e1;color:#f57f17}
 
 /* ===== STATS ===== */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:40px 0 60px}
@@ -75,7 +81,8 @@ footer{background:#1a1a2e;color:rgba(255,255,255,0.6);text-align:center;padding:
 footer .logo{font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:0.08em;margin-bottom:8px}
 footer .logo span{color:#e94560}
 footer p{font-size:0.75rem}
-footer .note{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.7rem;color:rgba(255,255,255,0.35)}
+footer a{color:rgba(255,255,255,0.6);text-decoration:none}
+footer a:hover{color:#fff}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
@@ -112,7 +119,7 @@ footer .note{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,
   <ul>
     <li><a href="#overview" class="active">会社概要</a></li>
     <li><a href="#history">沿革</a></li>
-    <li><a href="#stats">実績</a></li>
+    <li><a href="#stats">事業実績</a></li>
   </ul>
 </nav>
 
@@ -126,18 +133,27 @@ footer .note{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,
     <h3>Company Profile</h3>
     <table>
       <tr><td>会社名</td><td>株式会社 KT VACE</td></tr>
-      <tr><td>設立</td><td>2015年4月</td></tr>
-      <tr><td>代表取締役</td><td>田中 一郎（ダミー）</td></tr>
-      <tr><td>所在地</td><td>東京都渋谷区神宮前X-X-X</td></tr>
-      <tr><td>資本金</td><td>5,000万円</td></tr>
-      <tr><td>従業員数</td><td>85名（2025年12月現在）</td></tr>
-      <tr><td>事業内容</td><td>DXコンサルティング<br>ソフトウェア開発<br>AIソリューション</td></tr>
+      <tr><td>設立</td><td>2018年7月4日</td></tr>
+      <tr><td>代表取締役</td><td>谷本 浩治</td></tr>
+      <tr><td>所在地</td><td>〒104-0061<br>東京都中央区銀座7丁目13番6号<br>サガミビル2階</td></tr>
+      <tr><td>資本金</td><td>100万円</td></tr>
+      <tr><td>事業内容</td><td>コンサルティング事業<br>受託開発事業・技術顧問<br>教育に関する事業<br>地方創生事業</td></tr>
+      <tr><td>海外法人</td><td>KT VACE International Corp<br>（米国カリフォルニア州トーランス）</td></tr>
     </table>
   </div>
   <div class="overview-card">
     <h3>Vision & Mission</h3>
-    <p class="vision-text">"テクノロジーで、あたらしい価値を創る。"</p>
-    <p class="vision-sub">KT VACEは「Value」と「ACE」を組み合わせた社名の通り、最高の価値を提供することをミッションとしています。クライアントのビジネス課題をテクノロジーで解決し、共に成長するパートナーを目指します。</p>
+    <p class="vision-text">"人を笑顔に、チームを笑顔に<br>バリューをあげるお手伝いをします"</p>
+    <p class="vision-sub">KT VACEは、経営・システム・デジタルマーケティングのコンサルティングから、受託開発・SES、教育研修、そして日本の伝統工芸を世界に届ける地方創生事業まで、テクノロジーと人の力で社会に価値を創出します。</p>
+    <div class="clients-title">主な取引先</div>
+    <ul class="clients-list">
+      <li>株式会社 リクルート テクノロジー</li>
+      <li>株式会社 アイリッジ</li>
+      <li>株式会社 ADKマーケティング・ソリューションズ</li>
+      <li>株式会社 Fesbase</li>
+      <li>株式会社 マルタケ</li>
+      <li>三重県立上野高校</li>
+    </ul>
   </div>
 </section>
 
@@ -146,163 +162,119 @@ footer .note{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,
   <h2>沿革</h2>
   <div class="timeline">
 
-    <div class="timeline-item milestone" data-year="2015">
+    <div class="timeline-item milestone" data-year="2018">
       <div class="timeline-dot"></div>
-      <span class="timeline-year">2015.04</span>
+      <span class="timeline-year">2018.07</span>
       <div class="timeline-content">
         <div class="timeline-title">株式会社 KT VACE 設立</div>
-        <div class="timeline-desc">東京都渋谷区にて創業。Webシステム開発を中心とした受託開発事業を開始。創業メンバー3名でスタート。</div>
+        <div class="timeline-desc">東京都中央区銀座にて創業。経営・システム・デジタルマーケティング支援を中心としたコンサルティング事業および受託開発事業を開始。</div>
         <span class="timeline-tag tag-founding">創業</span>
       </div>
     </div>
 
-    <div class="timeline-item" data-year="2016">
+    <div class="timeline-item" data-year="2018">
       <div class="timeline-dot"></div>
-      <span class="timeline-year">2016.06</span>
+      <span class="timeline-year">2018</span>
       <div class="timeline-content">
-        <div class="timeline-title">自社プロダクト第1弾リリース</div>
-        <div class="timeline-desc">業務効率化SaaS「VACE Flow」をリリース。中小企業向けのワークフロー管理ツールとして展開。</div>
-        <span class="timeline-tag tag-product">プロダクト</span>
-      </div>
-    </div>
-
-    <div class="timeline-item" data-year="2017">
-      <div class="timeline-dot"></div>
-      <span class="timeline-year">2017.03</span>
-      <div class="timeline-content">
-        <div class="timeline-title">大阪オフィス開設</div>
-        <div class="timeline-desc">関西エリアの顧客拡大に伴い、大阪市北区に西日本拠点を開設。10名体制でスタート。</div>
-        <span class="timeline-tag tag-expansion">拠点拡大</span>
-      </div>
-    </div>
-
-    <div class="timeline-item" data-year="2017">
-      <div class="timeline-dot"></div>
-      <span class="timeline-year">2017.11</span>
-      <div class="timeline-content">
-        <div class="timeline-title">VACE Flow 導入100社突破</div>
-        <div class="timeline-desc">リリースから約1年半で導入企業が100社を突破。製造業・小売業を中心に導入が拡大。</div>
-        <span class="timeline-tag tag-milestone">マイルストーン</span>
-      </div>
-    </div>
-
-    <div class="timeline-item milestone" data-year="2018">
-      <div class="timeline-dot"></div>
-      <span class="timeline-year">2018.04</span>
-      <div class="timeline-content">
-        <div class="timeline-title">DXコンサルティング事業部 新設</div>
-        <div class="timeline-desc">デジタルトランスフォーメーション支援の需要増加を受け、コンサルティング専門部署を設立。大手企業のDX推進をサポート。</div>
+        <div class="timeline-title">コンサルティング・受託開発事業を本格展開</div>
+        <div class="timeline-desc">アドテク、デジタルマーケティング、決済、ECなど幅広い分野でのDX推進支援を開始。リクルートテクノロジー、アイリッジ、ADKマーケティング・ソリューションズ等との取引を開始。</div>
         <span class="timeline-tag tag-expansion">事業拡大</span>
-      </div>
-    </div>
-
-    <div class="timeline-item" data-year="2019">
-      <div class="timeline-dot"></div>
-      <span class="timeline-year">2019.02</span>
-      <div class="timeline-content">
-        <div class="timeline-title">「IT Innovation Award」受賞</div>
-        <div class="timeline-desc">VACE Flowが業務効率化カテゴリにおいて優秀賞を受賞。UXデザインとカスタマイズ性が高く評価される。</div>
-        <span class="timeline-tag tag-award">受賞</span>
-      </div>
-    </div>
-
-    <div class="timeline-item" data-year="2019">
-      <div class="timeline-dot"></div>
-      <span class="timeline-year">2019.09</span>
-      <div class="timeline-content">
-        <div class="timeline-title">AI研究開発チーム発足</div>
-        <div class="timeline-desc">機械学習・自然言語処理を活用したソリューション開発に着手。大学との共同研究プログラムも開始。</div>
-        <span class="timeline-tag tag-product">R&D</span>
-      </div>
-    </div>
-
-    <div class="timeline-item milestone" data-year="2020">
-      <div class="timeline-dot"></div>
-      <span class="timeline-year">2020.06</span>
-      <div class="timeline-content">
-        <div class="timeline-title">リモートワーク完全対応 & 従業員50名突破</div>
-        <div class="timeline-desc">コロナ禍を機にフルリモート体制を構築。全国採用を開始し、組織が50名規模に成長。</div>
-        <span class="timeline-tag tag-milestone">マイルストーン</span>
-      </div>
-    </div>
-
-    <div class="timeline-item" data-year="2021">
-      <div class="timeline-dot"></div>
-      <span class="timeline-year">2021.01</span>
-      <div class="timeline-content">
-        <div class="timeline-title">AIプロダクト「VACE Insight」リリース</div>
-        <div class="timeline-desc">データ分析・予測AIプラットフォームを正式リリース。ノーコードでAI活用が可能な点が好評を得る。</div>
-        <span class="timeline-tag tag-product">プロダクト</span>
-      </div>
-    </div>
-
-    <div class="timeline-item" data-year="2021">
-      <div class="timeline-dot"></div>
-      <span class="timeline-year">2021.08</span>
-      <div class="timeline-content">
-        <div class="timeline-title">シリーズA資金調達 完了</div>
-        <div class="timeline-desc">VCおよび事業会社から総額3億円の資金調達を実施。プロダクト開発と海外展開の加速に充当。</div>
-        <span class="timeline-tag tag-milestone">マイルストーン</span>
       </div>
     </div>
 
     <div class="timeline-item" data-year="2022">
       <div class="timeline-dot"></div>
-      <span class="timeline-year">2022.04</span>
+      <span class="timeline-year">2022.07</span>
       <div class="timeline-content">
-        <div class="timeline-title">シンガポール法人設立</div>
-        <div class="timeline-desc">東南アジア市場への進出を開始。シンガポールに現地法人「KT VACE Asia Pte. Ltd.」を設立。</div>
-        <span class="timeline-tag tag-global">グローバル</span>
+        <div class="timeline-title">伝統工芸 x NFTプロジェクト 第1弾リリース</div>
+        <div class="timeline-desc">日本初となる「伝統工芸の職人に一品物の制作依頼ができる権利」を付与したNFTをOpenSeaで販売開始。伝統工芸の衰退問題（従事者減少・低収益性・後継者不足）をテクノロジーで解決する地方創生事業に本格参入。</div>
+        <span class="timeline-tag tag-nft">NFT</span>
+        <span class="timeline-tag tag-crafts">伝統工芸</span>
+      </div>
+    </div>
+
+    <div class="timeline-item milestone" data-year="2022">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2022.10</span>
+      <div class="timeline-content">
+        <div class="timeline-title">伝統工芸 x NFTプロジェクト 第2弾リリース</div>
+        <div class="timeline-desc">全国の伝統工芸品20種類を「付喪神（つくもがみ）」モチーフのデジタルアートとしてNFT化。西陣織、江戸切子、南部鉄器、九谷焼、伊賀くみひもなど20品目を展開。購入者には限定コミュニティへの招待と売上使途決定権を付与。</div>
+        <span class="timeline-tag tag-nft">NFT</span>
+        <span class="timeline-tag tag-crafts">伝統工芸</span>
       </div>
     </div>
 
     <div class="timeline-item" data-year="2023">
       <div class="timeline-dot"></div>
-      <span class="timeline-year">2023.03</span>
+      <span class="timeline-year">2023.01</span>
       <div class="timeline-content">
-        <div class="timeline-title">生成AI統合ソリューション提供開始</div>
-        <div class="timeline-desc">大規模言語モデルを活用した企業向けAIアシスタント構築サービスを開始。金融・製造業を中心に導入が進む。</div>
-        <span class="timeline-tag tag-product">プロダクト</span>
+        <div class="timeline-title">熱意ある地方創生ベンチャー連合に参画</div>
+        <div class="timeline-desc">地方創生に取り組むベンチャー企業のネットワーク組織に参画。伝統工芸支援を通じた地域活性化の取り組みを加速。</div>
+        <span class="timeline-tag tag-crafts">伝統工芸</span>
       </div>
     </div>
 
     <div class="timeline-item" data-year="2023">
       <div class="timeline-dot"></div>
-      <span class="timeline-year">2023.10</span>
+      <span class="timeline-year">2023.04</span>
       <div class="timeline-content">
-        <div class="timeline-title">「DX Enabler of the Year」受賞</div>
-        <div class="timeline-desc">日本DX推進協会より、中堅企業のDX支援における顕著な実績が評価され、年間最優秀賞を受賞。</div>
-        <span class="timeline-tag tag-award">受賞</span>
-      </div>
-    </div>
-
-    <div class="timeline-item milestone" data-year="2024">
-      <div class="timeline-dot"></div>
-      <span class="timeline-year">2024.04</span>
-      <div class="timeline-content">
-        <div class="timeline-title">本社を渋谷ストリームに移転</div>
-        <div class="timeline-desc">事業拡大に伴い本社オフィスを渋谷ストリームへ移転。カフェスペースやラボを備えたクリエイティブオフィスに。</div>
-        <span class="timeline-tag tag-expansion">拠点拡大</span>
+        <div class="timeline-title">瞑想 x 伝統工芸イベント開催</div>
+        <div class="timeline-desc">南青山の瞑想スタジオ「Medicha」にて、瞑想と伝統工芸の美を融合させた特別イベントを開催。伝統工芸の新しい体験価値を提案。</div>
+        <span class="timeline-tag tag-event">イベント</span>
+        <span class="timeline-tag tag-crafts">伝統工芸</span>
       </div>
     </div>
 
     <div class="timeline-item" data-year="2024">
       <div class="timeline-dot"></div>
-      <span class="timeline-year">2024.09</span>
+      <span class="timeline-year">2024.04</span>
       <div class="timeline-content">
-        <div class="timeline-title">累計クライアント500社突破</div>
-        <div class="timeline-desc">創業から9年、取引先企業が累計500社を突破。リピート率85%以上を維持。</div>
-        <span class="timeline-tag tag-milestone">マイルストーン</span>
+        <div class="timeline-title">研修講師派遣事業を開始</div>
+        <div class="timeline-desc">株式会社CHANGEへの研修講師派遣を開始。企業の人材育成ニーズに応じた研修プログラムの設計・講師派遣サービスを展開。教育事業を本格化。</div>
+        <span class="timeline-tag tag-education">教育</span>
       </div>
     </div>
 
-    <div class="timeline-item milestone" data-year="2025">
+    <div class="timeline-item" data-year="2024">
       <div class="timeline-dot"></div>
-      <span class="timeline-year">2025.04</span>
+      <span class="timeline-year">2024.04</span>
       <div class="timeline-content">
-        <div class="timeline-title">創業10周年</div>
-        <div class="timeline-desc">創業10周年を迎え、新中期経営計画「VACE 2030」を発表。AIネイティブカンパニーへの変革を宣言。</div>
-        <span class="timeline-tag tag-milestone">マイルストーン</span>
+        <div class="timeline-title">AI x 伝統工芸ワークショップ開催</div>
+        <div class="timeline-desc">GALLERY AOYAMA IYASAKAにて「伝統の再発見」と題したAI x 伝統工芸ワークショップを開催。参加者がAIツールで画像を生成し、九谷焼にプリントする体験を提供。</div>
+        <span class="timeline-tag tag-event">イベント</span>
+        <span class="timeline-tag tag-crafts">伝統工芸</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2024">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2024.06</span>
+      <div class="timeline-content">
+        <div class="timeline-title">銀座で AI x 伝統工芸イベント第2弾開催</div>
+        <div class="timeline-desc">銀座にてAI x 伝統工芸イベントの第2弾を開催。最新のAI技術と日本の伝統工芸を掛け合わせた新しい体験を提供し、伝統工芸の魅力発信を継続。</div>
+        <span class="timeline-tag tag-event">イベント</span>
+        <span class="timeline-tag tag-crafts">伝統工芸</span>
+      </div>
+    </div>
+
+    <div class="timeline-item milestone" data-year="2024">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2024.10</span>
+      <div class="timeline-content">
+        <div class="timeline-title">米国法人 KT VACE International Corp 設立</div>
+        <div class="timeline-desc">米国カリフォルニア州トーランスにKT VACE International Corpを設立。日本の伝統工芸品を世界市場に届け、職人を支援するグローバル展開の第一歩。伊賀くみひも、伊賀焼、書道作品などを海外向けに販売開始。</div>
+        <span class="timeline-tag tag-global">グローバル</span>
+        <span class="timeline-tag tag-crafts">伝統工芸</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2024">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2024.10</span>
+      <div class="timeline-content">
+        <div class="timeline-title">明海大学にて「デジタル・イノベーション探究」講義を実施</div>
+        <div class="timeline-desc">EO Tokyo Central の活動として、明海大学にて代表・谷本浩治が講師を務め、IoT・Society 5.0・プログラミング・SDGs・国際社会をテーマにした実践的な講義を前期・後期を通じて実施。</div>
+        <span class="timeline-tag tag-education">教育</span>
       </div>
     </div>
 
@@ -312,20 +284,20 @@ footer .note{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,
 <!-- STATS -->
 <section class="stats" id="stats">
   <div class="stat-card">
-    <div class="stat-number">10</div>
-    <div class="stat-label">Years / 創業年数</div>
+    <div class="stat-number">4</div>
+    <div class="stat-label">事業領域</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">500+</div>
-    <div class="stat-label">Clients / 累計取引社数</div>
+    <div class="stat-number">20</div>
+    <div class="stat-label">NFT化した伝統工芸品</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">85</div>
-    <div class="stat-label">Members / 従業員数</div>
+    <div class="stat-number">2</div>
+    <div class="stat-label">拠点（東京・米国）</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">3</div>
-    <div class="stat-label">Offices / 拠点数</div>
+    <div class="stat-number">7</div>
+    <div class="stat-label">創業からの年数</div>
   </div>
 </section>
 
@@ -334,8 +306,8 @@ footer .note{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="logo">KT <span>VACE</span></div>
-  <p>&copy; 2015-2025 KT VACE Inc. All Rights Reserved.</p>
-  <div class="note">※ このページに掲載されている情報はダミーデータです。実際の内容に差し替えてご利用ください。</div>
+  <p>&copy; 2018-2025 KT VACE Inc. All Rights Reserved.</p>
+  <p style="margin-top:8px"><a href="https://ktvace.co.jp/" target="_blank">ktvace.co.jp</a></p>
 </footer>
 
 <!-- ===== SCRIPT ===== -->
@@ -384,7 +356,7 @@ const statObserver = new IntersectionObserver((entries) => {
       if (isNaN(num)) return;
       let count = 0;
       const duration = 1500;
-      const step = Math.ceil(num / (duration / 16));
+      const step = Math.max(1, Math.ceil(num / (duration / 16)));
       const timer = setInterval(() => {
         count += step;
         if (count >= num) { count = num; clearInterval(timer); }
