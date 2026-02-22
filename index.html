@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>(株) KT VACE - 沿革</title>
+<style>
+/* ===== RESET & BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Helvetica Neue','Noto Sans JP',sans-serif;background:#fafafa;color:#333;line-height:1.8;-webkit-font-smoothing:antialiased}
+
+/* ===== HEADER ===== */
+header{position:relative;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 40%,#0f3460 100%);color:#fff;overflow:hidden}
+header::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.header-inner{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:80px 24px 60px;text-align:center}
+.company-name{font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;letter-spacing:0.08em;margin-bottom:8px}
+.company-name span{color:#e94560}
+header h1{font-size:clamp(1rem,3vw,1.4rem);font-weight:300;letter-spacing:0.3em;opacity:0.8}
+.header-accent{width:60px;height:3px;background:#e94560;margin:24px auto 0;border-radius:2px}
+
+/* ===== NAV ===== */
+nav{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,0.04)}
+nav ul{max-width:1000px;margin:0 auto;display:flex;list-style:none;padding:0 24px;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+nav a{display:block;padding:14px 20px;color:#555;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.05em;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s}
+nav a:hover,nav a.active{color:#0f3460;border-bottom-color:#e94560}
+
+/* ===== MAIN ===== */
+main{max-width:1000px;margin:0 auto;padding:0 24px}
+
+/* ===== COMPANY OVERVIEW ===== */
+.overview{padding:60px 0 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.overview h2{grid-column:1/-1;font-size:1.6rem;font-weight:700;color:#1a1a2e;border-left:4px solid #e94560;padding-left:16px;margin-bottom:8px}
+.overview-card{background:#fff;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
+.overview-card h3{font-size:0.8rem;color:#888;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px}
+.overview-card table{width:100%;border-collapse:collapse}
+.overview-card td{padding:8px 0;font-size:0.9rem;border-bottom:1px solid #f0f0f0;vertical-align:top}
+.overview-card td:first-child{color:#888;width:35%;white-space:nowrap;padding-right:16px}
+.vision-text{font-size:1.05rem;color:#1a1a2e;font-weight:500;margin-bottom:12px}
+.vision-sub{font-size:0.88rem;color:#666}
+
+/* ===== TIMELINE ===== */
+.timeline-section{padding:60px 0}
+.timeline-section h2{font-size:1.6rem;font-weight:700;color:#1a1a2e;border-left:4px solid #e94560;padding-left:16px;margin-bottom:40px}
+.timeline{position:relative;padding-left:40px}
+.timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#e94560,#0f3460)}
+.timeline-item{position:relative;margin-bottom:40px;opacity:0;transform:translateY(20px);transition:all 0.6s ease}
+.timeline-item.visible{opacity:1;transform:translateY(0)}
+.timeline-dot{position:absolute;left:-33px;top:4px;width:18px;height:18px;border-radius:50%;border:3px solid #e94560;background:#fff;z-index:1;transition:all 0.3s}
+.timeline-item.milestone .timeline-dot{background:#e94560;box-shadow:0 0 0 4px rgba(233,69,96,0.2)}
+.timeline-year{display:inline-block;font-size:0.8rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#0f3460,#1a1a2e);padding:4px 14px;border-radius:20px;margin-bottom:8px;letter-spacing:0.05em}
+.timeline-item.milestone .timeline-year{background:linear-gradient(135deg,#e94560,#c0392b)}
+.timeline-content{background:#fff;border-radius:12px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:3px solid transparent;transition:all 0.3s}
+.timeline-item.milestone .timeline-content{border-left-color:#e94560}
+.timeline-content:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateX(4px)}
+.timeline-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+.timeline-desc{font-size:0.88rem;color:#666}
+.timeline-tag{display:inline-block;font-size:0.7rem;padding:2px 8px;border-radius:10px;margin-top:8px;font-weight:600}
+.tag-founding{background:#fff3e0;color:#e65100}
+.tag-expansion{background:#e3f2fd;color:#1565c0}
+.tag-product{background:#e8f5e9;color:#2e7d32}
+.tag-award{background:#fce4ec;color:#c62828}
+.tag-global{background:#f3e5f5;color:#6a1b9a}
+.tag-milestone{background:#fff8e1;color:#f57f17}
+
+/* ===== STATS ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:40px 0 60px}
+.stat-card{background:#fff;border-radius:12px;padding:28px 20px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.05);transition:transform 0.3s}
+.stat-card:hover{transform:translateY(-4px)}
+.stat-number{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;background:linear-gradient(135deg,#0f3460,#e94560);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:0.8rem;color:#888;margin-top:4px;letter-spacing:0.05em}
+
+/* ===== FOOTER ===== */
+footer{background:#1a1a2e;color:rgba(255,255,255,0.6);text-align:center;padding:40px 24px}
+footer .logo{font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:0.08em;margin-bottom:8px}
+footer .logo span{color:#e94560}
+footer p{font-size:0.75rem}
+footer .note{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.7rem;color:rgba(255,255,255,0.35)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .overview{grid-template-columns:1fr;gap:20px}
+  .stats{grid-template-columns:repeat(2,1fr);gap:12px}
+  .timeline{padding-left:32px}
+  .timeline-dot{left:-25px;width:14px;height:14px}
+  nav a{padding:12px 14px;font-size:0.8rem}
+}
+@media(max-width:480px){
+  .header-inner{padding:50px 20px 40px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat-card{padding:20px 16px}
+}
+
+/* ===== SCROLL ANIMATION ===== */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{animation:fadeInUp 0.6s ease forwards}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-inner">
+    <div class="company-name">KT <span>VACE</span></div>
+    <h1>COMPANY HISTORY</h1>
+    <div class="header-accent"></div>
+  </div>
+</header>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <ul>
+    <li><a href="#overview" class="active">会社概要</a></li>
+    <li><a href="#history">沿革</a></li>
+    <li><a href="#stats">実績</a></li>
+  </ul>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main>
+
+<!-- OVERVIEW -->
+<section class="overview" id="overview">
+  <h2>会社概要</h2>
+  <div class="overview-card">
+    <h3>Company Profile</h3>
+    <table>
+      <tr><td>会社名</td><td>株式会社 KT VACE</td></tr>
+      <tr><td>設立</td><td>2015年4月</td></tr>
+      <tr><td>代表取締役</td><td>田中 一郎（ダミー）</td></tr>
+      <tr><td>所在地</td><td>東京都渋谷区神宮前X-X-X</td></tr>
+      <tr><td>資本金</td><td>5,000万円</td></tr>
+      <tr><td>従業員数</td><td>85名（2025年12月現在）</td></tr>
+      <tr><td>事業内容</td><td>DXコンサルティング<br>ソフトウェア開発<br>AIソリューション</td></tr>
+    </table>
+  </div>
+  <div class="overview-card">
+    <h3>Vision & Mission</h3>
+    <p class="vision-text">"テクノロジーで、あたらしい価値を創る。"</p>
+    <p class="vision-sub">KT VACEは「Value」と「ACE」を組み合わせた社名の通り、最高の価値を提供することをミッションとしています。クライアントのビジネス課題をテクノロジーで解決し、共に成長するパートナーを目指します。</p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section" id="history">
+  <h2>沿革</h2>
+  <div class="timeline">
+
+    <div class="timeline-item milestone" data-year="2015">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2015.04</span>
+      <div class="timeline-content">
+        <div class="timeline-title">株式会社 KT VACE 設立</div>
+        <div class="timeline-desc">東京都渋谷区にて創業。Webシステム開発を中心とした受託開発事業を開始。創業メンバー3名でスタート。</div>
+        <span class="timeline-tag tag-founding">創業</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2016">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2016.06</span>
+      <div class="timeline-content">
+        <div class="timeline-title">自社プロダクト第1弾リリース</div>
+        <div class="timeline-desc">業務効率化SaaS「VACE Flow」をリリース。中小企業向けのワークフロー管理ツールとして展開。</div>
+        <span class="timeline-tag tag-product">プロダクト</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2017">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2017.03</span>
+      <div class="timeline-content">
+        <div class="timeline-title">大阪オフィス開設</div>
+        <div class="timeline-desc">関西エリアの顧客拡大に伴い、大阪市北区に西日本拠点を開設。10名体制でスタート。</div>
+        <span class="timeline-tag tag-expansion">拠点拡大</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2017">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2017.11</span>
+      <div class="timeline-content">
+        <div class="timeline-title">VACE Flow 導入100社突破</div>
+        <div class="timeline-desc">リリースから約1年半で導入企業が100社を突破。製造業・小売業を中心に導入が拡大。</div>
+        <span class="timeline-tag tag-milestone">マイルストーン</span>
+      </div>
+    </div>
+
+    <div class="timeline-item milestone" data-year="2018">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2018.04</span>
+      <div class="timeline-content">
+        <div class="timeline-title">DXコンサルティング事業部 新設</div>
+        <div class="timeline-desc">デジタルトランスフォーメーション支援の需要増加を受け、コンサルティング専門部署を設立。大手企業のDX推進をサポート。</div>
+        <span class="timeline-tag tag-expansion">事業拡大</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2019">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2019.02</span>
+      <div class="timeline-content">
+        <div class="timeline-title">「IT Innovation Award」受賞</div>
+        <div class="timeline-desc">VACE Flowが業務効率化カテゴリにおいて優秀賞を受賞。UXデザインとカスタマイズ性が高く評価される。</div>
+        <span class="timeline-tag tag-award">受賞</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2019">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2019.09</span>
+      <div class="timeline-content">
+        <div class="timeline-title">AI研究開発チーム発足</div>
+        <div class="timeline-desc">機械学習・自然言語処理を活用したソリューション開発に着手。大学との共同研究プログラムも開始。</div>
+        <span class="timeline-tag tag-product">R&D</span>
+      </div>
+    </div>
+
+    <div class="timeline-item milestone" data-year="2020">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2020.06</span>
+      <div class="timeline-content">
+        <div class="timeline-title">リモートワーク完全対応 & 従業員50名突破</div>
+        <div class="timeline-desc">コロナ禍を機にフルリモート体制を構築。全国採用を開始し、組織が50名規模に成長。</div>
+        <span class="timeline-tag tag-milestone">マイルストーン</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2021">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2021.01</span>
+      <div class="timeline-content">
+        <div class="timeline-title">AIプロダクト「VACE Insight」リリース</div>
+        <div class="timeline-desc">データ分析・予測AIプラットフォームを正式リリース。ノーコードでAI活用が可能な点が好評を得る。</div>
+        <span class="timeline-tag tag-product">プロダクト</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2021">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2021.08</span>
+      <div class="timeline-content">
+        <div class="timeline-title">シリーズA資金調達 完了</div>
+        <div class="timeline-desc">VCおよび事業会社から総額3億円の資金調達を実施。プロダクト開発と海外展開の加速に充当。</div>
+        <span class="timeline-tag tag-milestone">マイルストーン</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2022">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2022.04</span>
+      <div class="timeline-content">
+        <div class="timeline-title">シンガポール法人設立</div>
+        <div class="timeline-desc">東南アジア市場への進出を開始。シンガポールに現地法人「KT VACE Asia Pte. Ltd.」を設立。</div>
+        <span class="timeline-tag tag-global">グローバル</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2023">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2023.03</span>
+      <div class="timeline-content">
+        <div class="timeline-title">生成AI統合ソリューション提供開始</div>
+        <div class="timeline-desc">大規模言語モデルを活用した企業向けAIアシスタント構築サービスを開始。金融・製造業を中心に導入が進む。</div>
+        <span class="timeline-tag tag-product">プロダクト</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2023">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2023.10</span>
+      <div class="timeline-content">
+        <div class="timeline-title">「DX Enabler of the Year」受賞</div>
+        <div class="timeline-desc">日本DX推進協会より、中堅企業のDX支援における顕著な実績が評価され、年間最優秀賞を受賞。</div>
+        <span class="timeline-tag tag-award">受賞</span>
+      </div>
+    </div>
+
+    <div class="timeline-item milestone" data-year="2024">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2024.04</span>
+      <div class="timeline-content">
+        <div class="timeline-title">本社を渋谷ストリームに移転</div>
+        <div class="timeline-desc">事業拡大に伴い本社オフィスを渋谷ストリームへ移転。カフェスペースやラボを備えたクリエイティブオフィスに。</div>
+        <span class="timeline-tag tag-expansion">拠点拡大</span>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-year="2024">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2024.09</span>
+      <div class="timeline-content">
+        <div class="timeline-title">累計クライアント500社突破</div>
+        <div class="timeline-desc">創業から9年、取引先企業が累計500社を突破。リピート率85%以上を維持。</div>
+        <span class="timeline-tag tag-milestone">マイルストーン</span>
+      </div>
+    </div>
+
+    <div class="timeline-item milestone" data-year="2025">
+      <div class="timeline-dot"></div>
+      <span class="timeline-year">2025.04</span>
+      <div class="timeline-content">
+        <div class="timeline-title">創業10周年</div>
+        <div class="timeline-desc">創業10周年を迎え、新中期経営計画「VACE 2030」を発表。AIネイティブカンパニーへの変革を宣言。</div>
+        <span class="timeline-tag tag-milestone">マイルストーン</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" id="stats">
+  <div class="stat-card">
+    <div class="stat-number">10</div>
+    <div class="stat-label">Years / 創業年数</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">500+</div>
+    <div class="stat-label">Clients / 累計取引社数</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">85</div>
+    <div class="stat-label">Members / 従業員数</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">3</div>
+    <div class="stat-label">Offices / 拠点数</div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="logo">KT <span>VACE</span></div>
+  <p>&copy; 2015-2025 KT VACE Inc. All Rights Reserved.</p>
+  <div class="note">※ このページに掲載されている情報はダミーデータです。実際の内容に差し替えてご利用ください。</div>
+</footer>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+// Scroll animation for timeline items
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.timeline-item').forEach(item => {
+  observer.observe(item);
+});
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 80;
+    if (window.scrollY >= top) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Stat counter animation
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target.querySelector('.stat-number');
+      const text = el.textContent;
+      const num = parseInt(text);
+      const suffix = text.replace(/[0-9]/g, '');
+      if (isNaN(num)) return;
+      let count = 0;
+      const duration = 1500;
+      const step = Math.ceil(num / (duration / 16));
+      const timer = setInterval(() => {
+        count += step;
+        if (count >= num) { count = num; clearInterval(timer); }
+        el.textContent = count + suffix;
+      }, 16);
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-card').forEach(card => {
+  statObserver.observe(card);
+});
+</script>
+</body>
+</html>
